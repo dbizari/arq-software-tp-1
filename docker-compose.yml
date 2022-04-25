@@ -4,19 +4,12 @@ services:
     node:
         build: ./app
     
-    bbox1:
+    bbox:
         image: arqsoft/bbox:202201.1
         ports:
             - "9090:9090" # take in mind this port should assert with the one on the config file
         volumes:
-            - ./bbox_config_properties_1:/opt/bbox/config.properties:ro
-
-    bbox2:
-        image: arqsoft/bbox:202201.1
-        ports:
-            - "9091:9091" # take in mind this port should assert with the one on the config file
-        volumes:
-            - ./bbox_config_properties_2:/opt/bbox/config.properties:ro
+            - ./bbox_config_properties:/opt/bbox/config.properties:ro
 
     nginx:
         image: nginx:1.21.6
