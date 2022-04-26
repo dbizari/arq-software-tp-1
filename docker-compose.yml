@@ -8,6 +8,7 @@ services:
         image: arqsoft/bbox:202201.1
         ports:
             - "9090:9090" # take in mind this port should assert with the one on the config file
+            - "9091:9091"
         volumes:
             - ./bbox_config_properties:/opt/bbox/config.properties:ro
 
