@@ -12,12 +12,28 @@ config:
 
   phases:
     - name: Plain
-      duration: 20
-      arrivalCount: 5
+      duration: 30
+      arrivalRate: 5
+    - name: RampUp
+      duration: 120
+      arrivalRate: 50
+      rampTo: 100
+    - duration: 10
+      arrivalRate: 100
+      rampTo: 500  
+      name: Spike
+    - name: load test
+      duration: 60 
+      arrivalRate: 500
+    - name: down
+      duration: 10
+      arrivalRate: 5
+
+
 
 scenarios:
       
   - name: Bbox2 (/)
     flow:
       - get:
-          url: '/proxy-async'
+          url: '/proxy-9091'

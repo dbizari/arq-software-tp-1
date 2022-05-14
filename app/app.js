@@ -13,20 +13,23 @@ app.get('/ping', (req, res) => {
 });
 
 const callBbox = (req, res, bboxPort) => {
+    let start = Date.now();
     axios.get(`http://bbox:${bboxPort}/`)
         .then(result => {
+            console.log(`time on BBOX: ${Date.now() - start}`);
             res.send(`bbox_port_called:${bboxPort} bbox_status_code:${result.status} bbox_response_body:${result.data}`);
+            
         })
         .catch(err => {
             console.log('Error: ', err.message);
         });
 }
 
-app.get('/proxy-sync', (req, res) => {
+app.get('/proxy-9090', (req, res) => {
     callBbox(req, res, 9090);
 });
 
-app.get('/proxy-async', (req, res) => {
+app.get('/proxy-9091', (req, res) => {
     callBbox(req, res, 9091);
 });
 
