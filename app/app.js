@@ -22,11 +22,11 @@ const callBbox = (req, res, bboxPort) => {
         });
 }
 
-app.get('/proxy-sync', (req, res) => {
+app.get('/first', (req, res) => {
     callBbox(req, res, 9090);
 });
 
-app.get('/proxy-async', (req, res) => {
+app.get('/second', (req, res) => {
     callBbox(req, res, 9091);
 });
 
