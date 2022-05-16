@@ -1,0 +1,28 @@
+config:
+  environments:
+    node:
+      target: 'http://localhost:5555/node'
+      plugins:
+        statsd:
+          host: localhost
+          port: 8125
+          prefix: "artillery-node"
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    - name: Ramp
+      duration: 30
+      arrivalRate: 5
+      rampTo: 100
+    - name: Plain
+      duration: 3600
+      arrivalRate: 50
+    - duration: 30
+      arrivalRate: 5
+
+scenarios:      
+  - name: Bbox2 (/)
+    flow:
+      - get:
+          url: '/proxy-9091'
