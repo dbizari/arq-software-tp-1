@@ -12,15 +12,24 @@ config:
 
   phases:
     - name: Linear
+      duration: 20
+      arrivalRate: 5
+      rampTo: 100
+    - name: Stop-1
+      duration: 60
+      arrivalRate: 100
+    - name: Spike
+      duration: 15
+      arrivalRate: 480
+    - name: Stop-2
+      duration: 60
+      arrivalRate: 100
+    - name: down
       duration: 30
       arrivalRate: 5
-      rampTo: 200
-    - name: Soak
-      duration: 600
-      arrivalRate: 200
 
-scenarios:      
-  - name: Bbox1 (/)
+scenarios:
+  - name: Ping (/)
     flow:
       - get:
-          url: '/proxy-9090'
+          url: '/ping'
