@@ -14,31 +14,31 @@ config:
     - name: Linear-1
       duration: 30
       arrivalRate: 5
-      rampTo: 100
+      rampTo: 5
     - name: Stop-1
       duration: 15
-      arrivalRate: 100
+      arrivalRate: 5
     - name: Linear-2
       duration: 30
-      arrivalRate: 100
-      rampTo: 200
+      arrivalRate: 5
+      rampTo: 10
     - name: Stop-2
       duration: 15
-      arrivalRate: 200
+      arrivalRate: 10
     - name: Linear-3
       duration: 30
-      arrivalRate: 200
-      rampTo: 300
+      arrivalRate: 10
+      rampTo: 15
     - name: Stop-3
       duration: 15
-      arrivalRate: 300
+      arrivalRate: 15
     - name: Linear-4
       duration: 30
-      arrivalRate: 300
-      rampTo: 400
+      arrivalRate: 15
+      rampTo: 20
     - name: Stop-4
       duration: 15
-      arrivalRate: 400
+      arrivalRate: 20
     - name: down
       duration: 30
       arrivalRate: 5
