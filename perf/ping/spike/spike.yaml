@@ -14,22 +14,22 @@ config:
     - name: Linear
       duration: 20
       arrivalRate: 5
-      rampTo: 10
+      rampTo: 100
     - name: Stop-1
       duration: 60
-      arrivalRate: 10
+      arrivalRate: 100
     - name: Spike
-      duration: 5
-      arrivalRate: 60
+      duration: 15
+      arrivalRate: 480
     - name: Stop-2
       duration: 60
-      arrivalRate: 10
+      arrivalRate: 100
     - name: down
       duration: 30
       arrivalRate: 5
 
-scenarios:      
-  - name: Bbox2 (/)
+scenarios:
+  - name: Ping (/)
     flow:
       - get:
-          url: '/proxy-9091'
+          url: '/ping'

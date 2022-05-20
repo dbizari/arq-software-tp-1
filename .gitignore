@@ -117,3 +117,5 @@ node_modules
 
 #Package json
 package-lock.json
+
+.idea

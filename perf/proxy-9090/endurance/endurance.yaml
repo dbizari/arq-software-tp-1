@@ -18,9 +18,6 @@ config:
     - name: Soak
       duration: 600
       arrivalRate: 200
-    - name: down
-      duration: 30
-      arrivalRate: 5
 
 scenarios:      
   - name: Bbox1 (/)

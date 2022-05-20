@@ -11,24 +11,28 @@ config:
   pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
 
   phases:
-    - name: Linear
-      duration: 20
-      arrivalRate: 5
-      rampTo: 10
-    - name: Stop-1
-      duration: 60
-      arrivalRate: 10
-    - name: Spike
-      duration: 5
-      arrivalRate: 60
-    - name: Stop-2
-      duration: 60
-      arrivalRate: 10
-    - name: down
+    - duration: 15
+      arrivalRate: 1
+    - name: Ramp
       duration: 30
       arrivalRate: 5
+      rampTo: 21
+    - name: Plain
+      duration: 90
+      arrivalRate: 21
+    - duration: 15
+      arrivalRate: 1
+    - name: Ramp
+      duration: 30
+      arrivalRate: 5
+      rampTo: 22
+    - name: Plain
+      duration: 1200
+      arrivalRate: 22
+    - duration: 30
+      arrivalRate: 1
 
-scenarios:      
+scenarios:
   - name: Bbox2 (/)
     flow:
       - get:
