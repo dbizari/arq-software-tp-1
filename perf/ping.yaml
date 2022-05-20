@@ -13,16 +13,16 @@ config:
   phases:
     - name: Ramp
       duration: 30
-      arrivalRate: 5
-      rampTo: 100
+      arrivalRate: 1
+      rampTo: 50
     - name: Plain
-      duration: 120
-      arrivalRate: 50
-    - duration: 30
+      duration: 30
       arrivalRate: 5
+    - duration: 30
+      arrivalRate: 20
 
 scenarios:
-  - name: Ping (/)
+  - name: Ping
     flow:
       - get:
           url: '/ping'
